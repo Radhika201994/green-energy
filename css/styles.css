@@ -1,0 +1,371 @@
+/* 
+Color Scheme:
+- Primary Green: #4CAF50 (sustainability)
+- Secondary Green: #8BC34A (light green)
+- Accent Blue: #2196F3 (energy)
+- Neutral Light: #F5F5F5, #EEEEEE
+- Neutral Dark: #616161, #212121
+- Error/Alert: #F44336
+*/
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Font sizing for responsive design */
+  @media (max-width: 30rem) {
+    html {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (min-width: 30rem) {
+    html {
+      font-size: 1rem;
+    }
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    background-color: #F5F5F5;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    position: relative;
+  }
+  
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+  }
+  
+  .nav-toggle {
+    display: none;
+    color: #616161;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
+  .nav-items {
+    display: flex;
+  }
+  
+  .nav-items li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #616161;
+    transition: color 0.3s;
+  }
+  
+  .nav-items li a:hover, 
+  .nav-items li a.active {
+    color: #4CAF50;
+  }
+  
+  @media (max-width: 30rem) {
+    .nav-toggle {
+      display: block;
+    }
+    
+    .nav-items {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-items.show {
+      display: flex;
+    }
+    
+    .nav-items li {
+      width: 100%;
+    }
+    
+    .nav-items li a {
+      padding: 1rem;
+      border-bottom: 1px solid #EEEEEE;
+    }
+  }
+  
+  /* Masthead */
+  .masthead {
+    background-image: url('../img/masthead-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+    height: 16rem;
+  }
+  
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .masthead-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .masthead h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .masthead p {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  
+  @media (min-width: 30rem) {
+    .masthead h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding: 3rem 0;
+  }
+  
+  .intro {
+    margin-bottom: 2rem;
+  }
+  
+  .intro h2 {
+    font-size: 1.75rem;
+    color: #212121;
+  }
+  
+  .intro p {
+    color: #616161;
+  }
+  
+  .solution-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .solution-btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 0.25rem;
+    background-color: white;
+    color: #616161;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .solution-btn:hover {
+    border-color: #4CAF50;
+    color: #4CAF50;
+  }
+  
+  #active-button {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+  }
+  
+  .content-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+  }
+  
+  .content-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #212121;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-container img {
+    width: 100%;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content-text p {
+    margin-bottom: 1rem;
+    color: #616161;
+  }
+  
+  .cta-button {
+    margin-top: 1.5rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #3E9142;
+  }
+  
+  @media (min-width: 30rem) {
+    .content-wrapper {
+      flex-direction: row;
+    }
+    
+    .content-container img {
+      width: 25%;
+      margin-right: 1.5rem;
+      margin-bottom: 0;
+    }
+    
+    .content-text {
+      flex: 1;
+    }
+    
+    .content-container h1 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #212121;
+    color: white;
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-column p,
+  .footer-column address p {
+    color: #BDBDBD;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column address {
+    font-style: normal;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    background-color: #4CAF50;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column ul li a {
+    color: #BDBDBD;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: white;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #424242;
+    color: #9E9E9E;
+    font-size: 0.875rem;
+  }
+  
+  @media (min-width: 30rem) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
